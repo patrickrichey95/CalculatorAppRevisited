@@ -11,13 +11,16 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 
+import net.objecthunter.exp4j.Expression;
+import net.objecthunter.exp4j.ExpressionBuilder;
+
 public class MainActivity extends AppCompatActivity {
 
     //instantiate variables for calculations
     float firstNumber = 0;
     float secondNumber = 0;
     float result = 0;
-    char operation = ' ';
+    String operation = "";
     boolean isTypingNumber = false;
     int decimalCount = 0;
     int operatorCount = 0;
@@ -37,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         if (isTypingNumber) {
             resultText.setText(resultText.getText().toString() + number.getText().toString());
         } else {
-            resultText.setText(number.toString());
+            resultText.setText(number.getText().toString());
             decimalCount = 0;
         }
         isTypingNumber = true;
@@ -45,48 +48,50 @@ public class MainActivity extends AppCompatActivity {
 
     //add decimal to current number
     public void decimalClicked(View view) {
-        decimal = sender.currentTitle;
+        Button decimal = (Button)view;
         //if user is typing a number and hasn't yet entered a decimal point
-        if (isTypingNumber) && (decimalCount == 0) {
-            resultText.text = resultText.text + decimal;
+        if ((isTypingNumber) && (decimalCount == 0)){
+            resultText.setText(resultText.getText() + decimal.getText().toString());
             decimalCount = 1; //to limit allowed decimals per number
         }
     }
 
     //assign the operator on click (working on multiple operator clicks)
     public void operationClicked(View view) {
+        Button operationType = (Button)view;
         if (operatorCount == 0) {
-            firstNumber = (resultText.text as NSString).floatValue;
-                    operation = sender.currentTitle;
+            firstNumber = Float.parseFloat(resultText.getText().toString());
+                    operation = operationType.getText().toString();
                     isTypingNumber = false;
         }
         operatorCount++;
     }
 
     //perform calculation
-    public void evaluate() {
-        secondNumber = (resultText.text as NSString).floatValue
+    public void evaluate(View view) {
+        secondNumber = Float.parseFloat(resultText.getText().toString());
                 isTypingNumber = false;
         //perform any chosen operation
         if (operation.equals("+")) {
             result = firstNumber + secondNumber;
-        } elseif (operation.equals("-")){
+        } else if (operation.equals("-")){
             result = firstNumber - secondNumber;
-        } elseif (operation.equals("x")){
+        } else if (operation.equals("×")){
             result = firstNumber * secondNumber;
-        } elseif (operation.equals("÷")){
+        } else if (operation.equals("÷")){
             result = firstNumber / secondNumber;
         }
         //display the result to the resultText
-        resultText.text = "\(result)";
+        resultText.setText(String.valueOf(result));
         operatorCount = 0;
     }
 
     //clear the resultText and reset numbers
-    public void clearView() {
+    public void clearView(View view) {
         firstNumber = 0;
         secondNumber = 0;
         result = 0;
-        resultText.text = "\(0)";
+        resultText.setText("0");
+        isTypingNumber = false;
     }
 }

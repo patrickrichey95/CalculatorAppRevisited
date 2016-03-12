@@ -12,7 +12,7 @@
 
     <TextView
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="110dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/textStart"
         android:id="@+id/textView"
@@ -23,7 +23,8 @@
         android:textAlignment="textEnd"
         android:background="#4d4d4d"
         android:textColor="#ffffff"
-        android:fontFamily="Arial" />
+        android:fontFamily="Arial"
+        android:paddingRight="10dp" />
 
     <LinearLayout
         android:orientation="vertical"
@@ -50,7 +51,8 @@
                 android:layout_weight=".75"
                 android:background="#e0e0e0"
                 android:textSize="@dimen/buttonTextSize"
-                android:fontFamily="Arial" />
+                android:fontFamily="Arial"
+                android:onClick="clearView" />
 
             <Button
                 android:layout_width="0dp"
@@ -61,7 +63,8 @@
                 android:background="#f5933f"
                 android:textSize="@dimen/buttonTextSize"
                 android:textColor="#ffffff"
-                android:fontFamily="Arial" />
+                android:fontFamily="Arial"
+                android:onClick="operationClicked" />
         </LinearLayout>
 
         <LinearLayout
@@ -80,7 +83,8 @@
                 android:layout_weight=".25"
                 android:background="#e0e0e0"
                 android:textSize="@dimen/buttonTextSize"
-                android:fontFamily="Arial" />
+                android:fontFamily="Arial"
+                android:onClick="numberClicked" />
 
             <Button
                 android:layout_width="0dp"
@@ -90,7 +94,8 @@
                 android:layout_weight=".25"
                 android:background="#e0e0e0"
                 android:textSize="@dimen/buttonTextSize"
-                android:fontFamily="Arial" />
+                android:fontFamily="Arial"
+                android:onClick="numberClicked" />
 
             <Button
                 android:layout_width="0dp"
@@ -100,7 +105,8 @@
                 android:layout_weight=".25"
                 android:background="#e0e0e0"
                 android:textSize="@dimen/buttonTextSize"
-                android:fontFamily="Arial" />
+                android:fontFamily="Arial"
+                android:onClick="numberClicked" />
 
             <Button
                 android:layout_width="0dp"
@@ -111,7 +117,8 @@
                 android:background="#f5933f"
                 android:textSize="@dimen/buttonTextSize"
                 android:textColor="#ffffff"
-                android:fontFamily="Arial" />
+                android:fontFamily="Arial"
+                android:onClick="operationClicked" />
         </LinearLayout>
 
         <LinearLayout
@@ -129,7 +136,8 @@
                 android:layout_weight=".25"
                 android:background="#e0e0e0"
                 android:textSize="@dimen/buttonTextSize"
-                android:fontFamily="Arial" />
+                android:fontFamily="Arial"
+                android:onClick="numberClicked" />
 
             <Button
                 android:layout_width="0dp"
@@ -139,7 +147,8 @@
                 android:layout_weight=".25"
                 android:background="#e0e0e0"
                 android:textSize="@dimen/buttonTextSize"
-                android:fontFamily="Arial" />
+                android:fontFamily="Arial"
+                android:onClick="numberClicked" />
 
             <Button
                 android:layout_width="0dp"
@@ -149,7 +158,8 @@
                 android:layout_weight=".25"
                 android:background="#e0e0e0"
                 android:textSize="@dimen/buttonTextSize"
-                android:fontFamily="Arial" />
+                android:fontFamily="Arial"
+                android:onClick="numberClicked" />
 
             <Button
                 android:layout_width="0dp"
@@ -160,7 +170,8 @@
                 android:background="#f5933f"
                 android:textSize="@dimen/buttonTextSize"
                 android:textColor="#ffffff"
-                android:fontFamily="Arial" />
+                android:fontFamily="Arial"
+                android:onClick="operationClicked" />
         </LinearLayout>
 
         <LinearLayout
@@ -178,7 +189,8 @@
                 android:layout_weight=".25"
                 android:background="#e0e0e0"
                 android:textSize="@dimen/buttonTextSize"
-                android:fontFamily="Arial" />
+                android:fontFamily="Arial"
+                android:onClick="numberClicked" />
 
             <Button
                 android:layout_width="0dp"
@@ -188,7 +200,8 @@
                 android:layout_weight=".25"
                 android:background="#e0e0e0"
                 android:textSize="@dimen/buttonTextSize"
-                android:fontFamily="Arial" />
+                android:fontFamily="Arial"
+                android:onClick="numberClicked" />
 
             <Button
                 android:layout_width="0dp"
@@ -198,7 +211,8 @@
                 android:layout_weight=".25"
                 android:background="#e0e0e0"
                 android:textSize="@dimen/buttonTextSize"
-                android:fontFamily="Arial" />
+                android:fontFamily="Arial"
+                android:onClick="numberClicked" />
 
             <Button
                 android:layout_width="0dp"
@@ -209,7 +223,8 @@
                 android:background="#f5933f"
                 android:textSize="@dimen/buttonTextSize"
                 android:textColor="#ffffff"
-                android:fontFamily="Arial" />
+                android:fontFamily="Arial"
+                android:onClick="operationClicked" />
         </LinearLayout>
 
         <LinearLayout
@@ -222,12 +237,24 @@
             <Button
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:text="@string/zeroText"
-                android:id="@+id/zeroBtn"
-                android:layout_weight=".5"
+                android:text=""
+                android:id="@+id/blankBtn"
+                android:layout_weight=".25"
                 android:background="#e0e0e0"
                 android:textSize="@dimen/buttonTextSize"
-                android:fontFamily="Arial" />
+                android:fontFamily="Arial"
+                android:onClick="numberClicked" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:text="@string/zeroText"
+                android:id="@+id/zeroBtn"
+                android:layout_weight=".25"
+                android:background="#e0e0e0"
+                android:textSize="@dimen/buttonTextSize"
+                android:fontFamily="Arial"
+                android:onClick="numberClicked" />
 
             <Button
                 android:layout_width="0dp"
@@ -237,7 +264,8 @@
                 android:layout_weight=".25"
                 android:background="#e0e0e0"
                 android:textSize="@dimen/buttonTextSize"
-                android:fontFamily="Arial" />
+                android:fontFamily="Arial"
+                android:onClick="decimalClicked" />
 
             <Button
                 android:layout_width="0dp"
@@ -248,7 +276,8 @@
                 android:background="#f5933f"
                 android:textSize="@dimen/buttonTextSize"
                 android:textColor="#ffffff"
-                android:fontFamily="Arial" />
+                android:fontFamily="Arial"
+                android:onClick="evaluate" />
         </LinearLayout>
 
     </LinearLayout>
